@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98232D4F-EC76-4F24-AEB7-7851EC19C64B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FairManagementsystem</RootNamespace>
+    <AssemblyName>FairManagementsystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\VisitorManager.cs" />
+    <Compile Include="BLL\ZonetypeManager.cs" />
+    <Compile Include="DAL\DAO\Visitor.cs" />
+    <Compile Include="DAL\DAO\ZoneType.cs" />
+    <Compile Include="DAL\Gateway\DBGateway.cs" />
+    <Compile Include="DAL\Gateway\RelationGateway.cs" />
+    <Compile Include="DAL\Gateway\VisitorGateway.cs" />
+    <Compile Include="DAL\Gateway\ZoneTypeGateway.cs" />
+    <Compile Include="UI\MainAreaUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainAreaUI.Designer.cs">
+      <DependentUpon>MainAreaUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\VisitorEntryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VisitorEntryUI.Designer.cs">
+      <DependentUpon>VisitorEntryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ZoneSpecificVisitorInformationReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ZoneSpecificVisitorInformationReportUI.Designer.cs">
+      <DependentUpon>ZoneSpecificVisitorInformationReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ZoneTypeEntryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ZoneTypeEntryUI.Designer.cs">
+      <DependentUpon>ZoneTypeEntryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ZoneTypeWiseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ZoneTypeWiseUI.Designer.cs">
+      <DependentUpon>ZoneTypeWiseUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\MainAreaUI.resx">
+      <DependentUpon>MainAreaUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\VisitorEntryUI.resx">
+      <DependentUpon>VisitorEntryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ZoneSpecificVisitorInformationReportUI.resx">
+      <DependentUpon>ZoneSpecificVisitorInformationReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ZoneTypeEntryUI.resx">
+      <DependentUpon>ZoneTypeEntryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ZoneTypeWiseUI.resx">
+      <DependentUpon>ZoneTypeWiseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
